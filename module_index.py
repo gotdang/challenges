@@ -13,8 +13,7 @@ dirname = os.getcwd()
 
 
 def get_dirs():
-    for path in glob.glob('{}/[0-9]*'.format(dirname)):
-        yield path
+    yield from glob.glob('{}/[0-9]*'.format(dirname))
 
 
 def get_files(path):
@@ -25,8 +24,7 @@ def get_files(path):
 
 def get_lines(src):
     with open(scr) as f:
-        for line in f:
-            yield line
+        yield from f
 
 
 if __name__ == '__main__':

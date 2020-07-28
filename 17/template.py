@@ -18,9 +18,8 @@ FEED = 'your_feed'
 # Feed parsing
 
 def parse_feed(feed=FEED):
-    items = []
     # ...
-    return items
+    return []
 
 
 # Keep cache of feed in SQLite
@@ -51,8 +50,6 @@ def mail_episode(episode):
 def main():
     while True:
         feed = parse_feed()
-        for episode in feed:
-            pass
         # ...
         # etc
         # ...

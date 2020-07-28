@@ -23,14 +23,14 @@ def memodict(f):
 def load_words(input_file = DICTIONARY):
     """Load dictionary into a list and return list"""
     with open(input_file, "r") as wordfile:
-        return list((word for word in wordfile.read().split("\n") if word))
+        return [word for word in wordfile.read().split("\n") if word]
 
 
 @memoize
 def calc_word_value(word):
     """Calculate the value of the word entered into function
     using imported constant mapping LETTER_SCORES"""
-    return sum( [LETTER_SCORES.get(letter, 0) for letter in word.upper()] )
+    return sum(LETTER_SCORES.get(letter, 0) for letter in word.upper())
 
 
 def max_word_value(arg = load_words(DICTIONARY)):
